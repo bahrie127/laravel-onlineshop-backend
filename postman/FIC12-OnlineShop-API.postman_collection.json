@@ -1,0 +1,685 @@
+{
+	"info": {
+		"_postman_id": "7a0eb4b0-33e7-419a-b805-d5031e052863",
+		"name": "FIC12-OnlineShop-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3117985",
+		"_collection_link": "https://bold-satellite-2123.postman.co/workspace/New-Team-Workspace~82ebd54c-ab06-414e-a28c-44644a99c1b6/collection/3117985-7a0eb4b0-33e7-419a-b805-d5031e052863?action=share&source=collection_link&creator=3117985"
+	},
+	"item": [
+		{
+			"name": "get user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 3|UPisJJy7kyY9rpIzWcQoMYowivrrc54eCkagDouE8e3ad91b",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Abdul 3 Rozak\",\n    \"email\":\"abdul3@gmail.com\",\n    \"password\":\"12341234\",\n    \"phone\":\"08232434\",\n    \"roles\":\"USER\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "201 Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Abdul 3 Rozak\",\n    \"email\":\"abdul3@gmail.com\",\n    \"password\":\"12341234\",\n    \"phone\":\"08232434\",\n    \"roles\":\"USER\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 11 Jan 2024 13:56:25 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 11 Jan 2024 13:56:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.23"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"3|UPisJJy7kyY9rpIzWcQoMYowivrrc54eCkagDouE8e3ad91b\",\n    \"user\": {\n        \"name\": \"Abdul 3 Rozak\",\n        \"email\": \"abdul3@gmail.com\",\n        \"phone\": \"08232434\",\n        \"roles\": \"USER\",\n        \"updated_at\": \"2024-01-11T13:56:25.000000Z\",\n        \"created_at\": \"2024-01-11T13:56:25.000000Z\",\n        \"id\": 13\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "POST Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|UPisJJy7kyY9rpIzWcQoMYowivrrc54eCkagDouE8e3ad91b",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "201 Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Abdul 3 Rozak\",\n    \"email\":\"abdul3@gmail.com\",\n    \"password\":\"12341234\",\n    \"phone\":\"08232434\",\n    \"roles\":\"USER\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 11 Jan 2024 13:56:25 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 11 Jan 2024 13:56:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.23"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"3|UPisJJy7kyY9rpIzWcQoMYowivrrc54eCkagDouE8e3ad91b\",\n    \"user\": {\n        \"name\": \"Abdul 3 Rozak\",\n        \"email\": \"abdul3@gmail.com\",\n        \"phone\": \"08232434\",\n        \"roles\": \"USER\",\n        \"updated_at\": \"2024-01-11T13:56:25.000000Z\",\n        \"created_at\": \"2024-01-11T13:56:25.000000Z\",\n        \"id\": 13\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "POST Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"abdul3@gmail.com\",\n    \"password\":\"12341234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "201 Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Abdul 3 Rozak\",\n    \"email\":\"abdul3@gmail.com\",\n    \"password\":\"12341234\",\n    \"phone\":\"08232434\",\n    \"roles\":\"USER\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 11 Jan 2024 13:56:25 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 11 Jan 2024 13:56:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.23"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"3|UPisJJy7kyY9rpIzWcQoMYowivrrc54eCkagDouE8e3ad91b\",\n    \"user\": {\n        \"name\": \"Abdul 3 Rozak\",\n        \"email\": \"abdul3@gmail.com\",\n        \"phone\": \"08232434\",\n        \"roles\": \"USER\",\n        \"updated_at\": \"2024-01-11T13:56:25.000000Z\",\n        \"created_at\": \"2024-01-11T13:56:25.000000Z\",\n        \"id\": 13\n    }\n}"
+				},
+				{
+					"name": "200 Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"abdul3@gmail.com\",\n    \"password\":\"12341234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 11 Jan 2024 14:10:16 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 11 Jan 2024 14:10:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.23"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "54"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"4|rsc1RSeMetgHKFVvMYmbrddXMx5SIYwagTyPVZTQee3c7624\",\n    \"user\": {\n        \"id\": 13,\n        \"name\": \"Abdul 3 Rozak\",\n        \"email\": \"abdul3@gmail.com\",\n        \"phone\": \"08232434\",\n        \"roles\": \"USER\",\n        \"email_verified_at\": null,\n        \"two_factor_secret\": null,\n        \"two_factor_recovery_codes\": null,\n        \"two_factor_confirmed_at\": null,\n        \"created_at\": \"2024-01-11T13:56:25.000000Z\",\n        \"updated_at\": \"2024-01-11T13:56:25.000000Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "GET categories",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 4|rsc1RSeMetgHKFVvMYmbrddXMx5SIYwagTyPVZTQee3c7624",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/categories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Product by category id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 4|rsc1RSeMetgHKFVvMYmbrddXMx5SIYwagTyPVZTQee3c7624",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/products?category_id=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "category_id",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET all products",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 4|rsc1RSeMetgHKFVvMYmbrddXMx5SIYwagTyPVZTQee3c7624",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 4|rsc1RSeMetgHKFVvMYmbrddXMx5SIYwagTyPVZTQee3c7624",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 11 Jan 2024 14:48:56 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 11 Jan 2024 14:48:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.23"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Success\",\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 1,\n                \"category_id\": 4,\n                \"name\": \"Roberta Mayer\",\n                \"description\": \"Ut amet doloremque officiis laboriosam. Distinctio excepturi nostrum quam tempore iste voluptatibus adipisci. Necessitatibus harum atque eum. Autem esse voluptas vel facere.\",\n                \"image\": \"https://via.placeholder.com/640x480.png/00ff66?text=deserunt\",\n                \"price\": 6157,\n                \"stock\": 35,\n                \"is_available\": 1,\n                \"created_at\": \"2024-01-10T15:48:14.000000Z\",\n                \"updated_at\": \"2024-01-10T15:48:14.000000Z\"\n            },\n            {\n                \"id\": 2,\n                \"category_id\": 1,\n                \"name\": \"Jeromy Kling\",\n                \"description\": \"Et impedit eligendi architecto corporis. Vero natus ut voluptatibus similique ipsa non. Quo reiciendis non eius nulla. Molestiae voluptatibus enim assumenda quia dignissimos impedit.\",\n                \"image\": \"https://via.placeholder.com/640x480.png/00ff55?text=vel\",\n                \"price\": 3448,\n                \"stock\": 83,\n                \"is_available\": 1,\n                \"created_at\": \"2024-01-10T15:48:14.000000Z\",\n                \"updated_at\": \"2024-01-10T15:48:14.000000Z\"\n            },\n            {\n                \"id\": 3,\n                \"category_id\": 4,\n                \"name\": \"Prof. Marvin Bins\",\n                \"description\": \"Natus eius ea autem molestias laboriosam debitis. Et qui maxime quam aut. Ipsam quae voluptatibus delectus quia dolorem quis et repellat. In enim officiis dolorem.\",\n                \"image\": \"https://via.placeholder.com/640x480.png/009911?text=nihil\",\n                \"price\": 8405,\n                \"stock\": 46,\n                \"is_available\": 1,\n                \"created_at\": \"2024-01-10T15:48:14.000000Z\",\n                \"updated_at\": \"2024-01-10T15:48:14.000000Z\"\n            },\n            {\n                \"id\": 4,\n                \"category_id\": 1,\n                \"name\": \"Carmine Strosin\",\n                \"description\": \"Corrupti qui et voluptas architecto nesciunt. Aut veniam iure modi corporis quia. Fuga architecto aut dolorem. Voluptatum est commodi quis mollitia veniam vitae quisquam officia.\",\n                \"image\": \"https://via.placeholder.com/640x480.png/0077bb?text=tenetur\",\n                \"price\": 4129,\n                \"stock\": 85,\n                \"is_available\": 1,\n                \"created_at\": \"2024-01-10T15:48:14.000000Z\",\n                \"updated_at\": \"2024-01-10T15:48:14.000000Z\"\n            },\n            {\n                \"id\": 5,\n                \"category_id\": 3,\n                \"name\": \"Raheem Dietrich\",\n                \"description\": \"A sit aut molestias possimus sint. Voluptatem libero sed consequatur perspiciatis maiores ex quam.\",\n                \"image\": \"https://via.placeholder.com/640x480.png/00aa11?text=dolores\",\n                \"price\": 303,\n                \"stock\": 37,\n                \"is_available\": 1,\n                \"created_at\": \"2024-01-10T15:48:14.000000Z\",\n                \"updated_at\": \"2024-01-10T15:48:14.000000Z\"\n            },\n            {\n                \"id\": 6,\n                \"category_id\": 4,\n                \"name\": \"Sandrine Kreiger\",\n                \"description\": \"Unde culpa sed tenetur et dicta sint non quisquam. Explicabo a cum aut minus labore. Laborum fugiat ut blanditiis placeat itaque magni id ea.\",\n                \"image\": \"https://via.placeholder.com/640x480.png/00ff99?text=deserunt\",\n                \"price\": 6944,\n                \"stock\": 5,\n                \"is_available\": 1,\n                \"created_at\": \"2024-01-10T15:48:14.000000Z\",\n                \"updated_at\": \"2024-01-10T15:48:14.000000Z\"\n            },\n            {\n                \"id\": 7,\n                \"category_id\": 1,\n                \"name\": \"Prof. Bettye Littel\",\n                \"description\": \"Velit recusandae ut aspernatur laudantium est inventore delectus. Doloribus ea ipsam perferendis aperiam recusandae. Qui rerum et sint ut.\",\n                \"image\": \"https://via.placeholder.com/640x480.png/00dd44?text=omnis\",\n                \"price\": 1771,\n                \"stock\": 48,\n                \"is_available\": 1,\n                \"created_at\": \"2024-01-10T15:48:14.000000Z\",\n                \"updated_at\": \"2024-01-10T15:48:14.000000Z\"\n            },\n            {\n                \"id\": 8,\n                \"category_id\": 1,\n                \"name\": \"Cloyd Feil Sr.\",\n                \"description\": \"Incidunt dolores aut natus. Architecto recusandae eum sed provident. Tempora ipsum molestiae impedit eius.\",\n                \"image\": \"https://via.placeholder.com/640x480.png/00cc77?text=quis\",\n                \"price\": 9138,\n                \"stock\": 75,\n                \"is_available\": 1,\n                \"created_at\": \"2024-01-10T15:48:14.000000Z\",\n                \"updated_at\": \"2024-01-10T15:48:14.000000Z\"\n            },\n            {\n                \"id\": 9,\n                \"category_id\": 3,\n                \"name\": \"Miss Hosea Nolan I\",\n                \"description\": \"Ipsam ea qui quia quos est. Quos ab et quia eveniet et at quia. Error veniam et omnis suscipit excepturi.\",\n                \"image\": \"https://via.placeholder.com/640x480.png/0088bb?text=dolores\",\n                \"price\": 6353,\n                \"stock\": 49,\n                \"is_available\": 1,\n                \"created_at\": \"2024-01-10T15:48:14.000000Z\",\n                \"updated_at\": \"2024-01-10T15:48:14.000000Z\"\n            },\n            {\n                \"id\": 10,\n                \"category_id\": 2,\n                \"name\": \"Catharine Kirlin\",\n                \"description\": \"Natus ducimus quia iure quas quas ut laborum. Sint illo dolor atque est aut officiis. Quas neque tenetur qui vel aliquam ut.\",\n                \"image\": \"https://via.placeholder.com/640x480.png/0077bb?text=molestias\",\n                \"price\": 8938,\n                \"stock\": 26,\n                \"is_available\": 1,\n                \"created_at\": \"2024-01-10T15:48:14.000000Z\",\n                \"updated_at\": \"2024-01-10T15:48:14.000000Z\"\n            }\n        ],\n        \"first_page_url\": \"http://localhost:8000/api/products?page=1\",\n        \"from\": 1,\n        \"last_page\": 3,\n        \"last_page_url\": \"http://localhost:8000/api/products?page=3\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/products?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": \"http://localhost:8000/api/products?page=2\",\n                \"label\": \"2\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/products?page=3\",\n                \"label\": \"3\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/products?page=2\",\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": \"http://localhost:8000/api/products?page=2\",\n        \"path\": \"http://localhost:8000/api/products\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 10,\n        \"total\": 21\n    }\n}"
+				}
+			]
+		}
+	]
+}
