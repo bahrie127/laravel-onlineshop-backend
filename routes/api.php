@@ -34,3 +34,9 @@ Route::get('/products', [App\Http\Controllers\Api\ProductController::class, 'ind
 
 //address apiResource
 Route::apiResource('addresses', App\Http\Controllers\Api\AddressController::class)->middleware('auth:sanctum');
+
+//order
+Route::post('/order', [App\Http\Controllers\Api\OrderController::class, 'order'])->middleware('auth:sanctum');
+
+//callback
+Route::post('/callback', [App\Http\Controllers\Api\CallbackController::class, 'callback']);
