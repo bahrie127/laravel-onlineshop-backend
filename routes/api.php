@@ -40,3 +40,15 @@ Route::post('/order', [App\Http\Controllers\Api\OrderController::class, 'order']
 
 //callback
 Route::post('/callback', [App\Http\Controllers\Api\CallbackController::class, 'callback']);
+
+//check status order by id order
+Route::get('/order/status/{id}', [App\Http\Controllers\Api\OrderController::class, 'checkStatusOrder'])->middleware('auth:sanctum');
+
+//udpate fcm id
+Route::post('/update-fcm', [App\Http\Controllers\Api\AuthController::class, 'updateFcmId'])->middleware('auth:sanctum');
+
+//get order by user
+Route::get('/orders', [App\Http\Controllers\Api\OrderController::class, 'getOrderByUser'])->middleware('auth:sanctum');
+
+//get order by id
+Route::get('/order/{id}', [App\Http\Controllers\Api\OrderController::class, 'getOrderById'])->middleware('auth:sanctum');

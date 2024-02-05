@@ -71,4 +71,21 @@ class AuthController extends Controller
             'user' => $user,
         ], 200);
     }
+
+    //update fcm id
+    public function updateFcmId(Request $request)
+    {
+        // Validate the request...
+        $validated = $request->validate([
+            'fcm_id' => 'required',
+        ]);
+
+        $user = $request->user();
+        $user->fcm_id = $validated['fcm_id'];
+        $user->save();
+
+        return response()->json([
+            'message' => 'FCM ID updated',
+        ], 200);
+    }
 }
